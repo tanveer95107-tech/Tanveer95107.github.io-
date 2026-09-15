@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tanu Store | Premium Clothing for Men, Women & Kids</title>
+  <meta name="description" content="Tanu Store — discover premium fashion for men, women and kids. Shop new arrivals, best sellers and special offers.">
+  <meta name="keywords" content="Tanu Store, clothing, fashion, men clothing, women clothing, kids clothing">
+  <meta name="author" content="Tanu Store">
+
+  <meta property="og:title" content="Tanu Store | Premium Fashion">
+  <meta property="og:description" content="Premium clothing for Men, Women & Kids.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --black: #111111;
+      --dark: #1b1b1b;
+      --gold: #c8a96b;
+      --cream: #f8f6f1;
+      --white: #ffffff;
+      --gray: #777777;
+      --border: #e7e4de;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .menu a {
+      font-size: 14px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .menu a:hover {
+      color: var(--gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      border: 0;
+      background: transparent;
+      font-size: 21px;
+      padding: 8px;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--black);
+      color: white;
+      font-size: 10px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .hamburger {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 26px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.20)),
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1250px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .hero-small {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.02;
+      max-width: 750px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 17px;
+      color: #eee;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: white;
+      padding: 13px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    /* GENERAL */
+    .section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 85px 25px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading span {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      margin: 7px 0;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 35%, rgba(0,0,0,.75));
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 28px;
+      width: 100%;
+    }
+
+    .category-content h3 {
+      font-size: 30px;
+      margin-bottom: 7px;
+    }
+
+    .category-content a {
+      text-decoration: underline;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .men {
+      background-image: url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .women {
+      background-image: url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .kids {
+      background-image: url("https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=900&q=85");
+    }
+
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--black);
+      color: white;
+      padding: 5px 9px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info {
+      padding: 17px;
+    }
+
+    .product-category {
+      font-size: 10px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin: 5px 0 8px;
+    }
+
+    .price {
+      font-weight: 700;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-weight: normal;
+      margin-left: 7px;
+      font-size: 13px;
+    }
+
+    .product-btn {
+      width: 100%;
+      margin-top: 13px;
+      padding: 10px;
+      border: 1px solid var(--black);
+      background: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-btn:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    /* PROMO */
+    .promo {
+      background: var(--cream);
+    }
+
+    .promo-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 80px 25px;
+      text-align: center;
+    }
+
+    .promo h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      margin-bottom: 12px;
+    }
+
+    .promo p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    /* WHY US */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--black);
+      color: white;
+    }
+
+    .about-inner {
+      max-width: 950px;
+      margin: auto;
+      text-align: center;
+      padding: 90px 25px;
+    }
+
+    .about-inner span {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .about-inner h2 {
+      font-size: 40px;
+      margin: 10px 0 20px;
+    }
+
+    .about-inner p {
+      color: #ccc;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      color: var(--gray);
+      padding-top: 12px;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: var(--cream);
+      padding: 35px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social {
+      border: 1px solid var(--black);
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .social:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0c0c0c;
+      color: white;
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 60px 25px 25px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    footer p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #292929;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 12px;
+    }
+
+    /* SEARCH */
+    .search-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(0,0,0,.85);
+      padding: 100px 20px;
+    }
+
+    .search-box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid var(--border);
+      font-size: 16px;
+      outline: none;
+    }
+
+    .close {
+      float: right;
+      border: 0;
+      background: none;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    /* CART */
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: min(420px, 100%);
+      height: 100vh;
+      background: white;
+      z-index: 2500;
+      box-shadow: -10px 0 40px rgba(0,0,0,.15);
+      transition: .3s;
+      padding: 25px;
+      overflow-y: auto;
+    }
+
+    .cart-panel.open {
+      right: 0;
+    }
+
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item img {
+      width: 70px;
+      height: 85px;
+      object-fit: cover;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .remove {
+      border: 0;
+      background: none;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .cart-total {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: var(--gray);
+      padding: 50px 0;
+    }
+
+    /* PRODUCT MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2200;
+      background: rgba(0,0,0,.75);
+      padding: 30px 15px;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      max-width: 850px;
+      margin: 30px auto;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .modal-image {
+      min-height: 500px;
+    }
+
+    .modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-info {
+      padding: 45px 35px;
+    }
+
+    .modal-info h2 {
+      font-size: 30px;
+      margin: 8px 0;
+    }
+
+    .modal-price {
+      font-size: 21px;
+      font-weight: 800;
+      margin: 15px 0;
+    }
+
+    .modal-info p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .size-select {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      z-index: 2;
+      border: 0;
+      background: white;
+      font-size: 25px;
+      width: 35px;
+      height: 35px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+      .menu {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        height: 66px;
+        padding: 0 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .section {
+        padding: 60px 15px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        min-height: 330px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h3 {
+        font-size: 14px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-content {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-image {
+        min-height: 350px;
+      }
+
+      .modal-info {
+        padding: 30px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    FREE SHIPPING ON SELECTED ORDERS • WELCOME TO TANU STORE
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <a href="#home" class="logo">TANU<span>STORE</span></a>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#kids">Kids</a></li>
+        <li><a href="#new">New Arrivals</a></li>
+        <li><a href="#sale">Sale</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openSearch()" aria-label="Search">⌕</button>
+
+        <button class="icon-btn" onclick="openCart()" aria-label="Shopping cart">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-small">Tanu Store • New Collection</div>
+
+        <h1>Style That<br>Speaks For You.</h1>
+
+        <p>
+          Discover modern fashion collections for Men, Women and Kids —
+          carefully selected for everyday style and special moments.
+        </p>
+
+        <a href="#new" class="btn btn-light">Shop Collection</a>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <span>Explore</span>
+        <h2>Shop By Category</h2>
+        <p>Find your perfect style from our latest collections.</p>
+      </div>
+
+      <div class="categories">
+
+        <div class="category men" id="men">
+          <div class="category-content">
+            <h3>Men</h3>
+            <a href="#men-products">Shop Men →</a>
+          </div>
+        </div>
+
+        <div class="category women" id="women">
+          <div class="category-content">
+            <h3>Women</h3>
+            <a href="#women-products">Shop Women →</a>
+          </div>
+        </div>
+
+        <div class="category kids" id="kids">
+          <div class="category-content">
+            <h3>Kids</h3>
+            <a href="#kids-products">Shop Kids →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section class="section" id="new">
+      <div class="section-heading">
+        <span>Fresh Styles</span>
+        <h2>New Arrivals</h2>
+        <p>Explore our newest pieces and update your wardrobe.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product" data-name="Classic Black Shirt" data-category="Men">
+          <div class="product-image">
+            <span class="badge">New</span>
+            <img src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=800&q=85" alt="Classic Black Shirt">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Classic Black Shirt</h3>
+            <div class="price">€49.99</div>
+            <button class="product-btn" onclick="openProduct('Classic Black Shirt','€49.99','Men','https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=800&q=85')">View Product</button>
+          </div>
+        </article>
+
+        <article class="product" data-name="Elegant Women Dress" data-category="Women">
+          <div class="product-image">
+            <span class="badge">New</span>
+            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85" alt="Elegant Women Dress">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Women</div>
+            <h3>Elegant Women Dress</h3>
+            <div class="price">€69.99</div>
+            <button class="product-btn" onclick="openProduct('Elegant Women Dress','€69.99','Women','https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85')">View Product</button>
+          </div>
+        </article>
+
+        <article class="product" data-name="Premium Kids Outfit" data-category="Kids">
+          <div class="product-image">
+            <span class="badge">New</span>
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85" alt="Premium Kids Outfit">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kids</div>
+            <h3>Premium Kids Outfit</h3>
+            <div class="price">€39.99</div>
+            <button class="product-btn" onclick="openProduct('Premium Kids Outfit','€39.99','Kids','https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85')">View Product</button>
+          </div>
+        </article>
+
+        <article class="product" data-name="Premium Casual Jacket" data-category="Men">
+          <div class="product-image">
+            <span class="badge">New</span>
+            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" alt="Premium Casual Jacket">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Premium Casual Jacket</h3>
+            <div class="price">€89.99</div>
+            <button class="product-btn" onclick="openProduct('Premium Casual Jacket','€89.99','Men','https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85')">View Product</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MEN PRODUCTS -->
+    <section class="section" id="men-products">
+      <div class="section-heading">
+        <span>Men's Collection</span>
+        <h2>Men's Fashion</h2>
+        <p>Modern essentials designed for everyday confidence.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=85" alt="Men Fashion Shirt">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Modern Formal Shirt</h3>
+            <div class="price">€54.99</div>
+            <button class="product-btn" onclick="addItem('Modern Formal Shirt','€54.99','https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85" alt="Men Jacket">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Urban Leather Jacket</h3>
+            <div class="price">€119.99</div>
+            <button class="product-btn" onclick="addItem('Urban Leather Jacket','€119.99','https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85" alt="Men Casual Fashion">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Premium Casual Look</h3>
+            <div class="price">€79.99</div>
+            <button class="product-btn" onclick="addItem('Premium Casual Look','€79.99','https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=800&q=85" alt="Men Blazer">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Men</div>
+            <h3>Classic Tailored Blazer</h3>
+            <div class="price">€139.99</div>
+            <button class="product-btn" onclick="addItem('Classic Tailored Blazer','€139.99','https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- WOMEN -->
+    <section class="section" id="women-products">
+      <div class="section-heading">
+        <span>Women's Collection</span>
+        <h2>Women's Fashion</h2>
+        <p>Elegant styles for every occasion.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85" alt="Women Dress">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Women</div>
+            <h3>Elegant Summer Dress</h3>
+            <div class="price">€74.99</div>
+            <button class="product-btn" onclick="addItem('Elegant Summer Dress','€74.99','https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85" alt="Women Fashion">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Women</div>
+            <h3>Minimal Fashion Set</h3>
+            <div class="price">€84.99</div>
+            <button class="product-btn" onclick="addItem('Minimal Fashion Set','€84.99','https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85" alt="Women Outfit">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Women</div>
+            <h3>Modern Chic Outfit</h3>
+            <div class="price">€94.99</div>
+            <button class="product-btn" onclick="addItem('Modern Chic Outfit','€94.99','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" alt="Women Jacket">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Women</div>
+            <h3>Premium Fashion Jacket</h3>
+            <div class="price">€109.99</div>
+            <button class="product-btn" onclick="addItem('Premium Fashion Jacket','€109.99','https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- KIDS -->
+    <section class="section" id="kids-products">
+      <div class="section-heading">
+        <span>Kids Collection</span>
+        <h2>Kids Fashion</h2>
+        <p>Comfortable and stylish looks for little trendsetters.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85" alt="Kids Outfit">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kids</div>
+            <h3>Kids Casual Outfit</h3>
+            <div class="price">€39.99</div>
+            <button class="product-btn" onclick="addItem('Kids Casual Outfit','€39.99','https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85" alt="Kids Fashion">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kids</div>
+            <h3>Little Star Collection</h3>
+            <div class="price">€44.99</div>
+            <button class="product-btn" onclick="addItem('Little Star Collection','€44.99','https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=800&q=85" alt="Kids Clothing">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kids</div>
+            <h3>Comfort Kids Wear</h3>
+            <div class="price">€34.99</div>
+            <button class="product-btn" onclick="addItem('Comfort Kids Wear','€34.99','https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=800&q=85" alt="Kids Style">
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kids</div>
+            <h3>Weekend Kids Style</h3>
+            <div class="price">€42.99</div>
+            <button class="product-btn" onclick="addItem('Weekend Kids Style','€42.99','https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=800&q=85')">Add To Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SALE -->
+    <section class="promo" id="sale">
+      <div class="promo-inner">
+        <div class="section-heading">
+          <span>Limited Time</span>
+          <h2>Special Offers</h2>
+          <p>Discover selected styles at special prices.</p>
+        </div>
+
+        <a href="#new" class="btn">Shop Sale</a>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section">
+      <div class="section-heading">
+        <span>Our Promise</span>
+        <h2>Why Choose Tanu Store?</h2>
+      </div>
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-icon">✦</div>
+          <h3>Premium Style</h3>
+          <p>Carefully selected fashion designed for modern lifestyles.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>Quality First</h3>
+          <p>We focus on quality, comfort and timeless style.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">♡</div>
+          <h3>Customer Care</h3>
+          <p>Your shopping experience is important to us.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">↗</div>
+          <h3>Latest Trends</h3>
+          <p>Discover fresh styles and collections throughout the year.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <span>About Tanu Store</span>
+        <h2>Fashion Made For Everyone.</h2>
+        <p>
+          Tanu Store brings together fashion for Men, Women and Kids in one
+          modern destination. Our goal is simple: make it easy for you to
+          discover clothing that looks great, feels comfortable and fits
+          your personal style.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-heading">
+        <span>Need Help?</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>How can I order a product?</summary>
+          <p>
+            Select a product and add it to your cart. You can then contact
+            Tanu Store through WhatsApp to confirm your order.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do you have Men, Women and Kids clothing?</summary>
+          <p>
+            Yes. Tanu Store is designed to offer collections for Men,
+            Women and Kids.
+          </p>
+        </details>
+
+        <details>
+          <summary>How can I contact Tanu Store?</summary>
+          <p>
+            You can contact us through WhatsApp or Instagram using the
+            links below.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I ask about sizes before ordering?</summary>
+          <p>
+            Yes. Contact us through WhatsApp and ask about available sizes
+            and product details.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <span>Get In Touch</span>
+        <h2>Contact Tanu Store</h2>
+        <p>Follow us or contact us for orders and questions.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Social Media</h3>
+          <p>Follow Tanu Store and discover our latest styles.</p>
+
+          <div class="social-links">
+            <a class="social"
+               href="https://www.instagram.com/tanver_aly?stkn=MXUzdjcyZjFxMnVsOA%3D%3D&utm_source=qr"
+               target="_blank"
+               rel="noopener">
+              Instagram
+            </a>
+
+            <!-- Replace this with your real Facebook URL -->
+            <a class="social"
+               href="https://www.facebook.com/"
+               target="_blank"
+               rel="noopener">
+              Facebook
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Order On WhatsApp</h3>
+          <p>
+            Want to order or ask about a product? Message Tanu Store directly.
+          </p>
+
+          <!-- Replace 1234567890 with your WhatsApp number including country code -->
+          <a class="btn"
+             href="https://wa.me/1234567890"
+             target="_blank"
+             rel="noopener">
+            WhatsApp Us
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">TANU<span>STORE</span></div>
+        <p>
+          Premium fashion for Men, Women and Kids.
+          Discover your style with Tanu Store.
+        </p>
+      </div>
+
+      <div>
+        <h4>Shop</h4>
+        <div class="footer-links">
+          <a href="#men-products">Men</a>
+          <a href="#women-products">Women</a>
+          <a href="#kids-products">Kids</a>
+          <a href="#new">New Arrivals</a>
+          <a href="#sale">Sale</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#home">Back To Top ↑</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/tanver_aly?stkn=MXUzdjcyZjFxMnVsOA%3D%3D&utm_source=qr"
+             target="_blank" rel="noopener">Instagram</a>
+
+          <a href="https://www.facebook.com/"
+             target="_blank" rel="noopener">Facebook</a>
+
+          <a href="https://wa.me/1234567890"
+             target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Tanu Store. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- SEARCH -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <button class="close" onclick="closeSearch()">×</button>
+      <h2 style="margin-bottom:15px;">Search Tanu Store</h2>
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search shirts, dresses, kids clothing..."
+        oninput="searchProducts()"
+      >
+      <div id="searchResults" style="margin-top:20px;"></div>
+    </div>
+  </div>
+
+  <!-- CART -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-head">
+      <h2>Your Cart</h2>
+      <button class="close" onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">€0.00</span>
+    </div>
+
+    <a
+      id="checkoutButton"
+      class="btn"
+      style="width:100%; margin-top:20px;"
+      href="https://wa.me/1234567890"
+      target="_blank"
+      rel="noopener"
+    >
+      Order On WhatsApp
+    </a>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+
+      <button class="modal-close" onclick="closeProduct()">×</button>
+
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+      </div>
+
+      <div class="modal-info">
+        <div class="product-category" id="modalCategory"></div>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-price" id="modalPrice"></div>
+
+        <p>
+          Premium selected style from the Tanu Store collection.
+          Choose your size and add this item to your shopping cart.
+        </p>
+
+        <select class="size-select" id="modalSize">
+          <option value="">Select Size</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>XXL</option>
+        </select>
+
+        <button class="btn" style="width:100%;" onclick="addModalProduct()">
+          Add To Cart
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+
+    /* MOBILE MENU */
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("show");
+      });
+    });
+
+    /* SEARCH */
+    function openSearch() {
+      document.getElementById("searchOverlay").style.display = "block";
+      document.getElementById("searchInput").focus();
+    }
+
+    function closeSearch() {
+      document.getElementById("searchOverlay").style.display = "none";
+      document.getElementById("searchInput").value = "";
+      document.getElementById("searchResults").innerHTML = "";
+    }
+
+    function searchProducts() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const products = document.querySelectorAll(".product");
+      const results = document.getElementById("searchResults");
+
+      if (!query) {
+        results.innerHTML = "";
+        return;
+      }
+
+      let found = [];
+
+      products.forEach(product => {
+        const name = product.dataset.name || product.querySelector("h3")?.innerText || "";
+        const category = product.dataset.category || product.querySelector(".product-category")?.innerText || "";
+
+        if (
+          name.toLowerCase().includes(query) ||
+          category.toLowerCase().includes(query)
+        ) {
+          found.push(name);
+        }
+      });
+
+      if (found.length === 0) {
+        results.innerHTML = "<p style='color:#777;'>No products found.</p>";
+      } else {
+        results.innerHTML = found.map(name =>
+          `<p style="padding:8px 0;border-bottom:1px solid #eee;">✓ ${name}</p>`
+        ).join("");
+      }
+    }
+
+    /* CART */
+    function addItem(name, price, image) {
+      cart.push({
+        name: name,
+        price: price,
+        image: image
+      });
+
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+      const cartTotal = document.getElementById("cartTotal");
+
+      cartCount.innerText = cart.length;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            <div style="font-size:40px;">🛒</div>
+            <p>Your cart is empty.</p>
+          </div>
+        `;
+        cartTotal.innerText = "€0.00";
+        return;
+      }
+
+      let total = 0;
+
+      cartItems.innerHTML = cart.map((item, index) => {
+        const numericPrice = parseFloat(item.price.replace("€", ""));
+        total += numericPrice;
+
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
+              <strong>${item.name}</strong>
+              <div>${item.price}</div>
+              <button class="remove" onclick="removeItem(${index})">
+                Remove
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      cartTotal.innerText = "€" + total.toFixed(2);
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById("cartPanel").classList.add("open");
+    }
+
+    function closeCart() {
+      document.getElementById("cartPanel").classList.remove("open");
+    }
+
+    /* PRODUCT MODAL */
+    let selectedProduct = {};
+
+    function openProduct(name, price, category, image) {
+      selectedProduct = {
+        name: name,
+        price: price,
+        category: category,
+        image: image
+      };
+
+      document.getElementById("modalTitle").innerText = name;
+      document.getElementById("modalPrice").innerText = price;
+      document.getElementById("modalCategory").innerText = category;
+      document.getElementById("modalImage").src = image;
+      document.getElementById("modalImage").alt = name;
+      document.getElementById("productModal").style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeProduct() {
+      document.getElementById("productModal").style.display = "none";
+      document.body.style.overflow = "auto";
+      document.getElementById("modalSize").value = "";
+    }
+
+    function addModalProduct() {
+      const size = document.getElementById("modalSize").value;
+
+      if (!size) {
+        alert("Please select a size first.");
+        return;
+      }
+
+      addItem(
+        selectedProduct.name + " - Size " + size,
+        selectedProduct.price,
+        selectedProduct.image
+      );
+
+      closeProduct();
+    }
+
+    /* CLOSE MODAL WHEN CLICKING OUTSIDE */
+    window.addEventListener("click", function(event) {
+      const modal = document.getElementById("productModal");
+
+      if (event.target === modal) {
+        closeProduct();
+      }
+    });
+
+    /* YEAR */
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    /* INITIAL CART */
+    updateCart();
+  </script>
+
+</body>
+</html>
